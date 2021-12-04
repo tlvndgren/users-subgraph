@@ -27,5 +27,5 @@ const server = new ApolloServer({
   });
   
   server.listen({ port }).then(({ url }) => {
-    console.log(`Films service ready at ${url}`);
+    console.log(`Users service ready at ${url}`);
   });
