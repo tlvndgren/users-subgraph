@@ -4,8 +4,6 @@ const { buildSubgraphSchema } = require("@apollo/federation")
 const typeDefs = gql(fs.readFileSync("./users.graphql", 'utf8'));
 const users = require("./data/users.js");
 
-const pry = require("pryjs");
-
 const port = process.env.PORT || 4001
 
 const resolvers = {
