@@ -1,7 +1,13 @@
+directive @tag(name: String!) repeatable on
+  | FIELD_DEFINITION
+  | INTERFACE
+  | OBJECT
+  | UNION
+
 type User @key(fields: "id") {
     id: ID!
-    firstName: String
-    lastName: String
+    firstName: String @tag(name: "external")
+    lastName: String @tag(name: "external")
     userScore: Int
 }
 
