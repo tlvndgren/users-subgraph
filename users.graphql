@@ -6,12 +6,12 @@ directive @tag(name: String!) repeatable on
 
 type User @key(fields: "id") {
     id: ID!
-    firstName: String @tag(name: "external")
-    lastName: String @tag(name: "external")
-    userScore: Int
+    firstName: String
+    lastName: String
+    userScore: Int @tag(name: "private")
 }
 
 extend type Query {
-    users: [User]
+    users: [User] 
     user(id: ID!): User!
 }
