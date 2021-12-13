@@ -6,7 +6,7 @@ directive @tag(name: String!) repeatable on
 
 "User account information"
 type User @key(fields: "id") {
-    "And internal user ID"
+    "Internal user ID"
     id: ID!
     "The user's first name"
     firstName: String
