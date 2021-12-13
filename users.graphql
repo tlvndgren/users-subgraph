@@ -11,7 +11,7 @@ type User @key(fields: "id") {
     email: String
     userScore: Int @tag(name: "private")
     username: String
-    address: String
+    address: String @tag(name: "private")
 }
 
 extend type Query {
