@@ -4,13 +4,21 @@ directive @tag(name: String!) repeatable on
   | OBJECT
   | UNION
 
+"User account information"
 type User @key(fields: "id") {
+    "And internal user ID"
     id: ID!
+    "The user's first name"
     firstName: String
+    "The user's last name"
     lastName: String
+    "The user's email on record."
     email: String
+    "The user's internal score - representative of chargebacks."
     userScore: Int @tag(name: "private")
+    "The user's self picked username."
     username: String
+    "The user's shipping address."
     address: String @tag(name: "private")
 }
 
