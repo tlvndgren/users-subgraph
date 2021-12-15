@@ -1,6 +1,5 @@
 publish:
-	APOLLO_KEY=service:Ty-Ecom-Fed-Demo:qRB-IERyEKfL5VoignIbDw \
-  		rover subgraph publish Ty-Ecom-Fed-Demo@current \
+  	rover subgraph publish Ty-Ecom-Fed-Demo@current \
   		--name users --schema ./users.graphql \
   		--routing-url https://users-subgraph-waaq4qt37q-uc.a.run.app
 
