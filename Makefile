@@ -1,7 +1,6 @@
 publish:
-  	rover subgraph publish Ty-Ecom-Fed-Demo@current \
-  		--name users --schema ./users.graphql \
-  		--routing-url https://users-subgraph-waaq4qt37q-uc.a.run.app
+	rover subgraph publish Ty-Ecom-Fed-Demo@current --schema ./users.graphql \
+		--name users --routing-url https://users-subgraph-waaq4qt37q-uc.a.run.app
 
 check:
 	apollo service:check \
