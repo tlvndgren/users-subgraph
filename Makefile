@@ -1,5 +1,5 @@
 publish:
-	rover subgraph publish Ty-Ecom-Fed-Demo@current --schema ./users.graphql \
+	rover subgraph publish Ty-Demo@current --schema ./users.graphql \
 		--name users --routing-url https://users-subgraph-waaq4qt37q-uc.a.run.app
 
 check:
