@@ -15,7 +15,7 @@ type User @key(fields: "id") {
     "The user's internal score - representative of chargebacks."
     userScore: Int @tag(name: "private")
     "The user's self picked username."
-    username: String
+    username: String @deprecated(reason: "We have moved away from usernames, use email.")
     "The user's shipping address."
     address: String @tag(name: "private")
     "The user's shipping email."
