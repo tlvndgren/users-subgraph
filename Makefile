@@ -3,6 +3,6 @@ publish:
 		--name users --routing-url https://users-subgraph-waaq4qt37q-uc.a.run.app
 
 check:
-	rover subgraph check Ty-Ecom-Fed-Demo \
+	rover subgraph check Ty-Demo \
 	--schema=users.graphql \
 	--name=users --validation-period=2w
