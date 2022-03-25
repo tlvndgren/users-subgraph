@@ -1,4 +1,8 @@
 publish:
+	rover subgraph publish Tyler-Fed-Demo@prod --schema ./users.graphql \
+		--name users --routing-url https://users-subgraph-bhl6lhslfa-uc.a.run.app
+
+publish-current:
 	rover subgraph publish Tyler-Fed-Demo@current --schema ./users.graphql \
 		--name users --routing-url https://users-subgraph-waaq4qt37q-uc.a.run.app
 
