@@ -4,6 +4,23 @@ directive @tag(name: String!) repeatable on
   | OBJECT
   | UNION
 
+"User Service Contact information"
+directive @contact(
+  "Contact title of the subgraph owner"
+  name: String!
+  "URL where the subgraph's owner can be reached"
+  url: String
+  "Other relevant notes can be included here; supports markdown links"
+  description: String
+) on SCHEMA
+
+extend schema
+  @contact(
+    name: "Joe Bob @User Server Team"
+    url: "https://myteam.slack.com/archives/teams-chat-room-url"
+    description: "send urgent issues to [#users-oncall](https://yourteam.slack.com/archives/oncall)."
+  )
+
 "User account information"
 type User @key(fields: "id") {
     "Internal user ID"
