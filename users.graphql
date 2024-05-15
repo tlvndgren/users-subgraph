@@ -30,7 +30,7 @@ type User @key(fields: "id") {
     "The user's last name"
     lastName: String
     "The user's middle name"
-    middleName: String
+    middle: String
     "The user's internal score - representative of chargebacks."
     userScore: Int @tag(name: "private")
     "The user's self picked username."
