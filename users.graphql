@@ -1,3 +1,39 @@
+"User account information"
+type User @key(fields: "id") {
+    "Internal user ID"
+    id: ID!
+    "The user's first name"
+    firstName: String
+    "The user's last name"
+    lastName: String
+    "The user's middle name"
+    middleName: String
+    "The user's internal score - representative of chargebacks."
+    userScore: Int @tag(name: "private")
+    "The user's self picked username."
+    username: String @deprecated(reason: "We have moved away from usernames, use email.")
+    "The user's shipping address."
+    address: String @tag(name: "private")
+    "The user's shipping email."
+    email: String!
+}
+
+type Query {
+    "Get a list of all users"
+    users: [User] 
+    "Get a single user."
+    user(id: ID!): User!
+}
+
+extend schema
+  @link(url: "https://specs.apollo.dev/federation/v2.5",
+        import: ["@key"])
+  @contact(
+    name: "Mary's @Users Server Team"
+    url: "https://myteam.slack.com/archives/teams-chat-room-url"
+    description: "send urgent issues to [#users-oncall](https://yourteam.slack.com/archives/oncall)."
+  )
+
 directive @tag(name: String!) repeatable on
   | FIELD_DEFINITION
   | INTERFACE
@@ -13,37 +49,3 @@ directive @contact(
   "Other relevant notes can be included here; supports markdown links"
   description: String
 ) on SCHEMA
-
-extend schema
-  @contact(
-    name: "Joe Bob @User Server Team"
-    url: "https://myteam.slack.com/archives/teams-chat-room-url"
-    description: "send urgent issues to [#users-oncall](https://yourteam.slack.com/archives/oncall)."
-  )
-
-"User account information"
-type User @key(fields: "id") {
-    "Internal user ID"
-    id: ID!
-    "The user's first name"
-    firstName: String
-    "The user's last name"
-    lastName: String
-    "The user's middle name"
-    middle: String
-    "The user's internal score - representative of chargebacks."
-    userScore: Int @tag(name: "private")
-    "The user's self picked username."
-    username: String @deprecated(reason: "We have moved away from usernames, use email.")
-    "The user's shipping address."
-    address: String @tag(name: "private")
-    "The user's shipping email."
-    email: String!
-}
-
-extend type Query {
-    "Get a list of all users"
-    users: [User] 
-    "Get a single user."
-    user(id: ID!): User!
-}
